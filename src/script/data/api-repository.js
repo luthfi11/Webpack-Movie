@@ -1,7 +1,8 @@
+import endpoint from './api-config';
 class ApiRepository {
 
-    static getNowPlayingMovie() {
-        return fetch(`https://api.themoviedb.org/3/movie/popular?api_key=60bf79a20ebb1e7e480ffe0d5c1bb2eb`)
+    static getMovieList(endpoint) {
+        return fetch(endpoint)
             .then(response => {
                 return response.json()
             })
@@ -13,7 +14,7 @@ class ApiRepository {
     }
 
     static searchMovie(title) {
-        return fetch(`https://api.themoviedb.org/3/search/movie?api_key=60bf79a20ebb1e7e480ffe0d5c1bb2eb&query=${title}`)
+        return fetch(`${endpoint.search}${title}`)
             .then(response => {
                 return response.json()
             })

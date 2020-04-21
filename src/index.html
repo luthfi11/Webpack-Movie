@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Movie Catalog</title>
 </head>
-<body>
-    <header>
-        <tab-layout></tab-layout>
+<body class="bg-dark">
+    <header class="background-nav">
+        <app-bar></app-bar>
+        <tab-navigation></tab-navigation>
     </header>
 
     <main>
-        <movie-list></movie-list>
+        <div class="container">
+            <div id="loading"></div>
+            <movie-list class="row"></movie-list>
+        </div>
     </main>
+
+    <footer-bar></footer-bar>
 </body>
 </html>
